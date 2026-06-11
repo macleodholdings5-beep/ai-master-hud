@@ -1,0 +1,111 @@
+.voice-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+}
+
+.agent-face {
+  flex: 0 0 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matrix-face {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  background: rgba(0, 212, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.eye {
+  width: 20px;
+  height: 20px;
+  background: #00d4ff;
+  border-radius: 50%;
+  margin: 0 15px;
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0; }
+}
+
+.mouth {
+  position: absolute;
+  bottom: 20px;
+  width: 30px;
+  height: 4px;
+  background: #00d4ff;
+  border-radius: 2px;
+  animation: speak 0.5s ease-in-out infinite;
+}
+
+@keyframes speak {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.5); }
+}
+
+.voice-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.listen-btn {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.listen-btn:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.listen-btn.listening {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.8); }
+}
+
+.transcript-area {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #00d4ff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.content {
+  color: #e0e0e0;
+  line-height: 1.6;
+  min-height: 60px;
+}
